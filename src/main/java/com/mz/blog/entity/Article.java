@@ -13,13 +13,11 @@ import java.util.List;
         @Index(name = "idx_author",columnList = "author_id"),
         @Index(name = "idx_category",columnList = "category_id"),
         @Index(name = "idx_status",columnList = "status"),
-        @Index(name = "idx_published",columnList = "published_at")
+        @Index(name = "idx_published",columnList = "published_on")
 })
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 public class Article {
 
     @Id
