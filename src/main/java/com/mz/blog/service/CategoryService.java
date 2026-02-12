@@ -87,7 +87,7 @@ public class CategoryService {
     }
 
     @Transactional
-    public void deleteAuthor(Long id) {
+    public void deleteCategory(Long id) {
         log.info("Deleting Category with ID: {}", id);
 
         Category category = categoryRepository.findById(id)

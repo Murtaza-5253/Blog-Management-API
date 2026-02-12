@@ -100,7 +100,7 @@ public class ArticleService {
 
         // Fetch from DB
         Page<Article> articlePage = articleRepository.findAll(pageable);
-
+        log.info("Found {} Articles", articlePage.getTotalElements());
         //convert to DTO
         List<ArticleResponse> articleResponses = articlePage.getContent()
                 .stream()
@@ -111,7 +111,7 @@ public class ArticleService {
     }
     @Transactional(readOnly = true)
     public PageResponse<ArticleResponse> getArticlesByStatus(ArticleStatus status,int page, int size){
-        log.info("Fetching Articles by sttaus: {} - page: {}, size: {}",status, page, size);
+        log.info("Fetching Articles by staus: {} - page: {}, size: {}",status, page, size);
 
         Pageable pageable = PageRequest.of(page, size, Sort.by("createdOn").descending());
 
